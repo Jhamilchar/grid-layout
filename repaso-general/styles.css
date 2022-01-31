@@ -1,0 +1,43 @@
+.container {
+    display: grid;
+    grid-template-columns: 200px 500px;  /* Definiendo columnas y filas en una grid */
+    grid-template-rows: 100px 700px;     /* Definiendo columnas y filas en una grid */
+    /* Organizando por componentes en áreas */
+    grid-template-areas: "header header" 
+                         "sidebar main";
+}
+
+.item {
+    border: 5px solid red;
+    counter-increment: item;
+}
+
+.item::before {
+    content: counter(item);
+}
+
+/* 
+ORGANIZANDO COMPONENTES ENTRE LINEA
+.item:nth-of-type(4) {
+    border-color: blue;
+    grid-column: 2/5;
+    grid-row: 1/2;
+} */
+
+.item:nth-of-type(1){
+    grid-area: header;
+    /* 
+    grid-column: 1 / -1; 
+    */
+}
+
+.item:nth-of-type(2){
+    border-color: blue;
+    grid-area: sidebar;
+}
+
+.item:nth-of-type(3){
+    border-color: green;
+    grid-area: main;
+}
+
