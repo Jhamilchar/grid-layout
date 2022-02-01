@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: blue;
+}
+
+.grid {
+    display: grid;
+}
