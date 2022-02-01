@@ -1,0 +1,88 @@
+input[id="list"]:checked ~ .project-list{
+    border: 10px solid blue;
+}
+
+.project-list {
+    padding: 1rem;
+}
+
+input[id="list"]:checked ~ .project-list .project {
+    border: 2px solid rgb(124, 8, 80);
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    grid-template-columns: auto 1fr 100px 100px;
+}
+
+input[id="list"]:checked ~ .project-list .project img {
+    inline-size: 50px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+input[id="grid"]:checked ~ .project-list {
+    border: 1px solid green;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+input[id="grid"]:checked ~ .project-list .project {
+    border: 5px solid darkmagenta;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 1fr auto auto;
+    align-items: center;
+}
+
+input[id="grid"]:checked ~ .project-list .project img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    grid-area: 1 / 1/1 / -1;
+}
+
+
+
+
+
+
+
+
+input[id="list"]:checked ~ .project-actions [for="list"] {
+    background-color: rgb(0, 26, 255);
+}
+
+input[id="grid"]:checked ~ .project-actions [for="grid"] {
+    background-color: rgb(31, 160, 26);
+}
+
+
+
+
+
+
+
+
+
+
+.project-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+input {
+    display: none;
+}
+
+label {
+    border: 2px solid rgb(12, 169, 180);
+    cursor: pointer;
+    user-select: none;
+    padding: 1rem;
+}
+
+body {
+    font-family: sans-serif;
+}

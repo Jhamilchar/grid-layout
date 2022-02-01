@@ -1,0 +1,42 @@
+.lesson {
+    font-family: arial;
+    border: 5px solid red;
+    display: grid;
+    grid-template-columns: 8.75rem 1fr;
+    grid-template-areas: "thumb title" 
+                         "description description";
+}
+
+.lesson-thumb {
+    border: solid rgb(0, 0, 0) 2px;
+    grid-area: thumb;
+}   
+
+.lesson-thumb img {
+    width: 100%;
+    vertical-align: middle;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.lesson-title {
+    border: solid orange 2px;
+    margin: 0;
+    grid-area: title;
+    place-self: center;
+}
+
+.lesson-decription {
+    border: solid green 2px;
+    margin: 0;
+    grid-area: description;
+}
+
+@media (min-width: 768px) {
+    .lesson {
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: "thumb title"
+                             "thumb description";
+    }
+}
